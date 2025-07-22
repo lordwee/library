@@ -33,4 +33,6 @@ addBook.addEventListener('click', function () {
     form.appendChild(bookTitle);
 
     onst bookAuthor =jlksajdflk
+    onst bookAuthor =jlksajdflk
+    onst bookAuthor =jlksajdflk
 }
