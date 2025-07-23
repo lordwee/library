@@ -31,4 +31,4 @@ addBook.addEventListener('click', function () {
 
     form.appendChild(bookTitleLabel);
     form.appendChild(bookTitle);
-}
+});
