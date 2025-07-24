@@ -1,0 +1,56 @@
+body {
+	background-color: grey;
+}
+.addBookContainer {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	background: url(bookcover.jpg);
+	color: #fff287; 
+	padding: 50px;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px #8A0000;
+	min-width: 33%;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+input {
+	max-width: 50%;
+	border: 3px solid #8A0000;
+	border-radius: 15px;
+	background-color: #fff287; 
+	color: #8A0000;
+	align-self: center;
+
+}
+
+form > button {
+	border-radius: 15px;
+	padding: 5px 10px;
+	background-color: #fff287; 
+	border: 3px solid #8A0000;
+	color: #8A0000;
+	max-width: 25%;
+	align-self: center;
+	
+
+h1 {
+	text-align: center;
+}
+
+.bookshelf {
+	width:  500px;
+	height: 500px;
+	background-color: green;
+}
+
+.book {
+	background-color: red;
+	height: 50px;
+}
