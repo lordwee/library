@@ -7,6 +7,14 @@ function Book(title, author, pages) {
 	this.author = author;
 	this.pages = pages;
 	this.id = crypto.randomUUID();
+  this.read = false;
+}
+Book.prototype.toggleRead = function() {
+  if(this.read === false) {
+   this.read = true; 
+  } else {
+    this.read = false;
+  }
 }
 
 function addBookToLibrary(title, author, pages) { 
@@ -31,21 +39,39 @@ function putBookOnShelf() {
     const deleteBook = document.createElement("button")
     deleteBook.setAttribute("class", "delete");
     deleteBook.textContent = "Delete Book";
-    
+    const readStatus = document.createElement("button");
+    if (item.read === true) {
+        readStatus.textContent = "Read"
+        readStatus.style.backgroundColor = "green"
+      } else {
+        readStatus.textContent = "Not read";
+        readStatus.style.backgroundColor = "red";
+      }
+
     book.appendChild(titleOfBook);
     book.appendChild(authorOfBook);
     book.appendChild(pagesOfBook);
     book.appendChild(deleteBook);
+    book.appendChild(readStatus);
     bookContainer.appendChild(book);
 
   deleteBook.addEventListener("click", function() {
     const bookToRemove = myLibrary.findIndex(item => book.getAttribute("data-id") === item.id) 
-      console.log(bookToRemove);
-      console.log(book.getAttribute("data-id"));
-      console.log(myLibrary);
     myLibrary.splice(bookToRemove, 1);
     book.remove();
     });
+  readStatus.addEventListener("click", function() {
+    if (item.read === false) {
+        item.toggleRead(); 
+        readStatus.textContent = "Read"
+        readStatus.style.backgroundColor = "green"
+      } else {
+        item.toggleRead(); 
+        readStatus.textContent = "Not read";
+        readStatus.style.backgroundColor = "red";
+      }
+    });
+    
   });
 }
 
