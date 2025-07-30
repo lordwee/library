@@ -39,10 +39,7 @@ function putBookOnShelf() {
     bookContainer.appendChild(book);
 
   deleteBook.addEventListener("click", function() {
-    const bookToRemove = myLibrary.findIndex(item => book.getAttribute("data-id") === item.id) 
-      console.log(bookToRemove);
-      console.log(book.getAttribute("data-id"));
-      console.log(myLibrary);
+    const bookToRemove = myLibrary.findIndex(item => book.getAttribute("data-id") === book.id) 
     myLibrary.splice(bookToRemove, 1);
     book.remove();
     });
